@@ -1,0 +1,44 @@
+@GameLibraryApi_HostAddress = http://localhost:5211
+
+### Health check
+GET {{GameLibraryApi_HostAddress}}/
+Accept: application/json
+
+### Search games through IGDB
+GET {{GameLibraryApi_HostAddress}}/api/games/search?query=Hades&limit=10
+Accept: application/json
+
+### Get a game by its IGDB ID
+GET {{GameLibraryApi_HostAddress}}/api/games/119133
+Accept: application/json
+
+### Add a game to the personal library
+POST {{GameLibraryApi_HostAddress}}/api/library
+Content-Type: application/json
+
+{
+  "externalGameId": 119133,
+  "status": "playing",
+  "personalRating": 9,
+  "note": "Minha primeira campanha"
+}
+
+### List the personal library
+GET {{GameLibraryApi_HostAddress}}/api/library
+Accept: application/json
+
+### Get library statistics
+GET {{GameLibraryApi_HostAddress}}/api/library/statistics
+Accept: application/json
+
+### Update a library entry
+PATCH {{GameLibraryApi_HostAddress}}/api/library/119133
+Content-Type: application/json
+
+{
+  "status": "finished",
+  "personalRating": 10
+}
+
+### Remove a game from the personal library
+DELETE {{GameLibraryApi_HostAddress}}/api/library/119133

@@ -1,0 +1,29 @@
+# Build output
+**/bin/
+**/obj/
+artifacts/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Test output
+**/TestResults/
+*.coverage
+*.coveragexml
+
+# NuGet
+**/packages/
+*.nupkg
+
+# Local settings and secrets
+**/appsettings.Secrets.json
+
+# Documentation assets
+**/docs/
+
+# Logs
+*.log
